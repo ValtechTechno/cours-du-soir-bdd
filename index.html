@@ -1,0 +1,1423 @@
+﻿<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>BDD</h1>
+					<h3>Behaviour Driven Development</h3>
+				</section>
+
+				<section>
+					<h1>Votre histoire</h1>
+					<p>Un problème rencontré récemment</p>
+					<p>Quelque chose que vous auriez souhaité savoir plus tôt</p>
+					<p>Mettre le titre de l'histoire sur le post it</p>
+				</section>
+
+				<section>
+					<h1>Conséquences sur engagements</h1>
+					<p>A partir de quel moment cette décision n'était plus réversible ?</p>
+					<p>Quand est ce que le problème a été remonté ?</p>
+					<p>Quel a été le coût ?</p>
+					<p>Mauvaise information communiquée à un client externe ?</p>
+					<p>Deadline non respectée ?</p>
+					<p>Perte financière ?</p>
+					<p>Code écrit pour rien ?</p>
+				</section>
+
+				<section>
+					<h1>Découverte délibérée</h1>
+					<p>Comment auriez vous pu avoir l'information manquante</p>
+					<p>A qui auriez vous pu parler ?</p>
+					<p>Où était l'information</p>
+					<p>Comment auriez vous pu assouplir vos engagements ?</p>
+				</section>
+
+				<section>
+					<h2>A priori</h2>
+					<p>BDD n'est pas nécessairement un outil d'automatisation</p>
+					<p>BDD n'est pas associée aux tests bout en bout</p>
+					<p>BDD n'est pas associée aux tests sélénium</p>
+					<p>BDD n'est pas un outil</p>
+					<blockquote>Avoir les conversations est plus important que les écrire ou les automatiser - Liz Keogh</blockquote>
+				</section>
+
+				<section>
+					<h2>Quelques repères historiques</h2>
+					<p>Black box testing (Weinberg and Gause, 1989)</p>
+					<p>Exemples automatisés (Ward Cunningham, 1996)</p>
+					<p>DDD (Eric Evans, 2004)</p>
+				</section>
+
+				<section>
+					<h2>TDD</h2>
+					<p>1995: Ward Cunningham & Kent Beck</p>
+					<img src="img/TestDrivenGameDevelopment1.png" style="width:300px" />
+					<ol>
+						<li><span style="color:red">Red</span>: Écrire un test qui va échouer car l'implémentation n’existe pas encore (Tester le test)</li>
+						<li><span style="color:green">Green</span>: Écrire l'implémentation utile la plus simple possible qui va faire passer les tests.</li>
+						<li><span style="color:blue">Refactor</span>: Supprimer la duplication. Améliorer le design.</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>TDD</h2>
+					<img src="img/TDD-hat.jpg" style="width:100px" />
+					<p>Les 3 règles (Bob Martin, 2005):</p>
+					<section>
+						<blockquote>Il est interdit d'écrire du code de production à moins que cela soit dans le but de faire passer un test en échec.</blockquote>
+					</section>
+					<section>
+						<blockquote>Il est interdit d'écrire plus que ce qui est nécessaire d'un test unitaire afin qu'il entre en échec; les échecs de compilations comptent pour des échecs.</blockquote>
+					</section>
+					<section>
+						<blockquote>Il est interdit d'écrire plus que ce qui est nécessaire du code de production afin de faire passer le test en échec.</blockquote>
+					</section>
+				</section>
+
+				<section>
+					<h2>TDD</h2>
+					<img src="img/TestDrivenGameDevelopment1.png" style="width:300px" />
+					<p>Spécifications des interactions</p>
+					<p>Outil de design interne et externe incrémental</p>
+					<p>Écrites par les programmeurs</p>
+					<p>Pour les programmeurs</p>
+				</section>
+
+				<section>
+					<h2>L'apprentissage du test</h2>
+					<img src="img/tdd1.jpg"/>
+					<blockquote>J'écris mon code en premier puis les tests</blockquote>
+					<blockquote>Les tests me permettent de vérifier que mon implémentation est correcte</blockquote>
+				</section>
+
+				<section>
+					<h2>L'apprentissage du test</h2>
+					<img src="img/tdd2.jpg"/>
+					<blockquote>Mes tests sont un filet de sécurité</blockquote>
+					<blockquote>Je peux modifier mon code avec confiance</blockquote>
+				</section>
+
+				<section>
+					<h2>L'apprentissage du test</h2>
+					<img src="img/tdd3.jpg"/>
+					<blockquote>Si j'écris mes tests avant l'implémentation alors je finis par écrire moins de code</blockquote>
+					<blockquote>De plus j'arrive à écrire un code plus facilement testable ce qui améliore mon design</blockquote>
+					<blockquote>Cette manière de travailler permet de concentrer mon attention sur la tache en cours</blockquote>
+				</section>
+
+				<section>
+					<h2>L'apprentissage du test</h2>
+					<img src="img/tdd4.jpg"/>
+					<blockquote>Avec le temps qui passe mes tests me servent de documentation</blockquote>
+				</section>
+
+				<section>
+					<h2>L'apprentissage du test</h2>
+					<img src="img/tdd5.jpg"/>
+					<blockquote>Écrire des tests revient à designer/spécifier l'API publique que je souhaiterais avoir</blockquote>
+					<blockquote>J'organise mon travail en commençant sur une phase de réflexion</blockquote>
+				</section>
+
+				<section>
+					<h2>L'apprentissage du test</h2>
+					<img src="img/tdd6.jpg"/>
+					<blockquote>En écrivant ces spécifications je spécifie le comportement attendu entre l'objet que je spécifie et ses collaborateurs</blockquote>
+				</section>
+
+				<section>
+					<h2>Mi-2003: De TDD à BDD</h2>
+						<img src="img/dan.jpg" />
+						<blockquote>Par où commencer ?</blockquote>
+						<blockquote>Que faut-il <span class="highlight">tester</span> ?</blockquote>
+						<blockquote>Comment appeler les <span class="highlight">tests</span> ?</blockquote>
+						<blockquote>Que faut-il ne pas <span class="highlight">tester</span> ?</blockquote>
+						<blockquote>Mais...les <span class="highlight">tests</span>...c'est pour les <span class="highlight">testeurs</span> !!!</blockquote>
+				</section>
+
+				<section>
+					<h2>Mi-2003: De TDD à BDD</h2>
+						<p>Les noms des méthodes de test doivent être des phrases</p>
+						<section>
+							<pre><code class="java">
+import junit.framework.*;
+
+	public class TestMath extends TestCase {
+
+	  public void testAdd() { 
+	        int num1 = 3; 
+	        int num2 = 2; 
+	        int total = 5; 
+	        int sum = 0; 
+	        sum = Math.add(num1, num2); 
+	        assertEquals(sum, total); 
+	  } 
+	} 
+						</pre></code>
+					</section>
+					<section>
+							<pre><code class="java">
+import junit.framework.*;
+
+	public class TestMath extends TestCase {
+
+	  public void testAddingTwoNumberReturnTheirSum() { 
+	        int num1 = 3; 
+	        int num2 = 2; 
+	        int total = 5; 
+	        int sum = 0; 
+	        sum = Math.add(num1, num2); 
+	        assertEquals(sum, total); 
+	  } 
+	} 
+						</pre></code>
+					</section>
+				</section>
+
+				<section>
+					<h2>Mi-2003: De TDD à BDD</h2>
+						<p>PNL:Les mots et les langages influent sur notre pensée</p>
+						<p>Introduction du mot "should" à la place de "test"</p>
+						<p>Le test se lit maintenant comme une spécification</p>
+						<section>
+							<pre><code class="java">
+import junit.framework.*;
+
+public class TestTimer {
+    public void testStartStop() throws Exception {
+        Timer timer = new Timer();
+        timer.start();
+
+        Thread.sleep(10);
+        timer.stop();
+
+        assertTrue(timer.elapsedTimeMillis() > 0);
+    }
+} 
+						</pre></code>
+					</section>
+					<section>
+						<pre><code>
+public class TimerSpec {
+    public void shouldMeasureAPeriodOfTime() throws Exception {
+        Timer timer = new Timer();
+        timer.start();
+
+        Thread.sleep(10);
+        timer.stop();
+
+        Verify.that(timer.elapsedTimeMillis() > 0);
+    }
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Mi-2003: De TDD à BDD</h2>
+						<p>Avantages de "should"</p>
+						<p>Permet de nommer facilement les méthodes de test</p>
+						<p>Permet d'appliquer SRP</p>
+						<p>Permet de remettre en cause les tests</p>
+						<p>Aide à comprendre les rapports de tests</p>
+						<img src="img/unittestreport.png"/>
+				</section>
+
+				<section>
+					<h2>Début 2004: Gherkin</h2>
+					<q>Tout cela ressemble fortement à de l'analyse...</q>
+					<pre><code class="gherkin_fr">
+Scénario: Effectuer un retrait avec succès
+# Le contexte
+Etant donné que je possède '100€' sur mon compte 
+# Les événements
+Quand je demande '20€' 
+# Le résultat attendu
+Alors '20€' doivent être distribués 
+					</pre></code>
+				</section>
+
+				<section>
+					<h2>2005-2009: Feature injection, Outside In, pull based</h2>
+					<p>Le développement est tiré par le besoin</p>
+					<p>Tout artefact existe car il provient d'un besoin plus haut dans le système</p>
+					<p>Permet de limiter le travail en cours</p>
+				</section>
+
+				<section>
+					<h2>2007: SDD</h2>
+					<p>Joshua Kerievsky (Refactoring to Patterns)</p>
+					<blockquote>Communities that do StorytestDrivenDevelopment (SDD) <span class="highlight">work collaboratively on storytests</span>. A <span class="highlight">domain expert</span> may write some storytest details on a whiteboard while a <span class="highlight">QA person looks on and asks questions</span> . Next, <span class="highlight">developers collaborate with the QA person and domain expert</span> to understand and then automate the storytest. <span class="highlight">Lots of dialogue between members of the customer and developer communities happens throughout this process.</span></blockquote>
+				</section>
+
+				<section>
+					<h2>2009: Dan's long definition</h2>
+					<section>
+						<blockquote>BDD is a second-generation, outside-in, pull-based, multiple-stakeholder, multiple-scale, high-automation, agile methodology.It describes a cycle of interactions with well-defined outputs, resulting in the delivery of working, tested software that matters.</blockquote>
+					</section>
+					<section>
+						<p>Second-generation</p>
+						<img src="img/DDD_TDD_BDD_intersection.png"/>
+						<blockquote>Comment tester ?</blockquote>
+						<blockquote>Comment documenter ?</blockquote>
+					</section>
+					<section>
+						<p>Outside-in and pull based</p>
+						<img src="img/PullBehaviorFromStakeholders40.png">
+						<div style="font-size:0.6em">
+							<p>Inspiré de lean</p>
+							<p>Développement tiré par le besoin</p>
+							<p>Besoin exprimé collaborativement sous forme d'exemples</p>
+							<p>On produit que ce qui est nécessaire</p>
+							<p>On produit quand c'est nécessaire</p>
+						</div>
+					</section>
+					<section>
+						<p>Agile</p>
+						<p>Itérations</p>
+						<p>Équipes multi-compétentes</p>
+						<p>Travail en tranches</p>
+					</section>
+					<section>
+						<p>High-Automation</p>
+						<p>Outillage</p>
+						<p>Vérification automatisée</p>
+						<p>Feedback sur travail en cours</p>
+					</section>
+					<section>
+						<p>Multiple stake holder (Kaizen)</p>
+						<p>Pousser la collaboration sur les 3 axes:</p>
+						<p>Métier</p>
+						<p>Technique</p>
+						<p>Personnes et les processus</p>
+					</section>
+					<section>
+						<p>Multiple scale</p>
+						<img src="img/fractale.png">
+					</section>
+				</section>
+
+				<section>
+					<h2>2009-2012: Specs par l'exemple</h2>
+					<p>Standardiser ATDD,BDD,TDR,Example Driven Development,Story Testing Driven Development, Executable specifications</p>
+					<div>
+						<img src="img/specby.jpg" style="width:200px;float:left" />
+						<blockquote>The fact that the same practices have so many names reflects the huge amount of innovation
+	in this field at the moment. It also reflects the fact that the practices described in
+	this book impact the ways teams approach specifications, development, and testing. To
+	be consistent, I had to choose one name. I settled on <span class="highlight">Specification by Example*</span>.</blockquote>
+						<p style="font-size:10pt">*Terme créé originellement par M.Fowler, 2002</p>
+					</div>
+				</section>
+
+				<section>
+					<h2>Processus de développement classique</h2>
+						<img src="img/classic2.png">
+				</section>
+
+				<section>
+					<h2>La communication</h2>
+					<p>Ambiguïtés</p>
+					<blockquote>Il a trouvé un avocat</blockquote>
+					<p>Amphibologie</p>
+					<blockquote>Elle est sortie en pleurant du café</blockquote>
+					<p>Illusions</p>
+					<img src="img/chevrouille.jpg" style="width:200px">
+				</section>
+
+				<section>
+					<h2>Comment communiquer ?</h2>
+					<section><img src="img/cell_01.jpg"/><p>Comment le client l'a expliqué</p></section>
+					<section><img src="img/cell_02.jpg"/><p>Comment le chef de projet l'a compris</p></section>
+					<section><img src="img/cell_03.jpg"/><p>Comment l'analyste l'a conçu</p></section>
+					<section><img src="img/cell_04.jpg"/><p>Comment les développeur l'ont implémenté</p></section>
+					<section><img src="img/cell_05.jpg"/><p>Ce que les testeurs ont reçu</p></section>
+					<section><img src="img/cell_06.jpg"/><p>Comment les commerciaux l'ont décrit</p></section>
+					<section><img src="img/cell_07.jpg"/><p>Comment le projet a été documenté</p></section>
+					<section><img src="img/cell_08.jpg"/><p>Ce que la production a installé</p></section>
+					<section><img src="img/cell_09.jpg"/><p>Ce que le client a été facturé</p></section>
+					<section><img src="img/cell_10.jpg"/><p>Le support client qui a été fourni</p></section>
+					<section><img src="img/cell_11.jpg"/><p>Comment le marketing la vendu</p></section>
+					<section><img src="img/cell_13.jpg"/><p>Ce dont le client avait vraiment besoin</p></section>
+				</section>
+
+				<section>
+					<h2>Optimisons au mieux le rôle de chacun</h2>
+					<blockquote class="fragment chat"><img class="shadow" src="img/ba.png" />Je possède la vision du produit, connaît les conditions d'utilisations normales, réponds aux questions.</blockquote>
+					<blockquote class="fragment chat"><img class="shadow" src="img/dev.png" />Je clarifie le besoin et vérifie la faisabilité technique (implem+automat)</blockquote>
+					<blockquote class="fragment chat"><img id="troll" class="shadow" src="img/tester.png" />Je sais où appuyer pour que ça fasse mal.</blockquote>
+				</section>
+
+				<section>
+					<h2>BDD comme processus de développement</h2>
+					<blockquote>Les individus et les échanges plutôt que les processus et les outils</blockquote>
+					<img src="img/bdddev.png">
+				</section>
+
+				<section>
+					<h2>Comment communiquer ?</h2>
+					<div style="font-size:0.6em">
+						<blockquote class="fragment chat"><img class="shadow" src="img/ba.png" />Nous voulons augmenter le nombre de commandes. Nous allons donc accorder 10% de remises sur toutes les premières commandes.</blockquote>
+						<blockquote class="fragment chat"><img class="shadow" src="img/dev.png" />public void CalculateDiscount(Order order){
+							if(order.Customer.IsNew)
+								order.FinalAmount = Math.Round(order.Total*0.9);
+							}
+						</blockquote>
+						<blockquote class="fragment chat"><img class="shadow" src="img/tester.png" />Register as "newuser"
+							Go to "/catalog/search"
+							Enter "ISBN-0955683610
+							Click "Search"
+							Click "Add to cart"
+							Click "View Cart"
+							Verify "Subtotal" is "30"</blockquote>
+					</div>
+				</section>
+
+				<section>
+					<h2>Comment communiquer ?</h2>
+					<p>Trouver un langage commun (DDD)</p>
+					<p>qui s'abstrait de la technologie</p>
+					<p>le <span class="highlight">QUOI</span> avant le <span class="highlight">COMMENT</span></p>
+					<p>Supprimer la différence d’impédance entre BA/DEV/Test </p>
+					<p>le même langage à tous les niveaux</p>
+					<p>Apprendre ensemble/Découvrir ensemble le comportement de l'application</p>
+					<p>Processus ayant pour but d'arriver à une vision commune</p>
+				</section>
+
+				<section>
+					<h2>S'exprimer en Gherkin</h2>
+					<img class="shadow" src="img/ba.png" />
+					<img class="shadow" src="img/dev.png" />
+					<img class="shadow" src="img/tester.png" />
+					<pre>
+						<code class="gherkin_fr">
+Etant donné un utilisateur qui n&rsquo;a jamais commandé
+Quand l&rsquo;utilisateur met un livre dans son panier
+Alors il faut lui accorder une remise de 10% sur le montant total du panier
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>Phase préparatoire</h2>
+					<p>Réalisée avant l'atelier</p>
+					<p>Avec responsable métier, analystes</p>
+					<p>Sortir les premiers exemples d'utilisation</p>
+					<p>Le but est de préparer les futures discussions</p>
+				</section>
+
+				<section>
+					<h2>Préparation de la session</h2>
+					<p>L'idéal: 1 dev, 1 testeur, 1 BA</p>
+					<p>Rotations de paires selon maturité</p>
+					<p>Idéalement une personne spécialisée dans le domaine de la fonctionnalité</p>
+					<p>Acteurs préparés à l'avance</p>
+					<p>Noter une version "allégée" des scénarios</p>
+					<p>Equipe entière selon maturité</p>
+				</section>
+
+				<section>
+					<h2>Les questions à se poser pour déterminer la valeur</h2>
+					<pre><code class="gherkin_fr">
+Afin de 'valeur'
+En tant que 'role'
+Je veux 'fonctionnalité'
+					</code></pre>		
+					<p>Comment cela doit fonctionner ?</p>
+					<p>Pourquoi cela doit il fonctionner comme cela ?</p>
+					<p>Qui a besoin de cette fonctionnalité</p>
+					<p>Que se passerait il si cette fonctionnalité était enlevée?</p>
+					<p>Quelle est la valeur pour les utilisateurs</p>
+					<p>Les 5 pourquoi</p>
+				</section>
+
+				<section>
+					<h2>Deliberate discovery</h2>
+					<p>Trouver des nouveaux scénarios à travers la collaboration et le brainstorming</p>
+						<pre><code class="gherkin_fr">
+Etant donné 'essayer de trouver différents contextes'
+Quand 'utilisation de la fonctionnalité'
+Alors 'essayer de trouver des vérifications alternatives'
+						</code></pre>
+						<p>Découvrir ce que nous ne savons pas</p>
+						<p>Découvrir les choses critiques qui pourraient être oubliés</p>
+						<p>Processus d'apprentissage collaboratif</p>
+				</section>
+
+				<section>
+					<h2>Exemple déroulement session</h2>
+					<div style="font-size:0.5em">
+						<blockquote class="fragment chat"><img class="shadow" src="img/ba.png" />Nous voulons proposer aussi à nos client la livraison à domicile</blockquote>
+						<blockquote class="fragment chat"><img src="img/dev.png" />Existe il des cas où il ne faut pas proposer la livraison à domicile ne doit pas être proposée ?</blockquote>
+						<blockquote class="fragment chat"><img src="img/ba.png" />Oui il ne faut pas la proposer pour les adresses de livraisons qui ne se situent pas sur paris</blockquote>
+						<blockquote class="fragment chat"><img src="img/dev.png" />D'accord, il faut donc proposer cette option uniquement pour les adresses ayant pour code postal 75XXX</blockquote>
+					</div>
+				</section>
+
+				<section>
+					<h2>Exemple déroulement session</h2>
+					<div style="font-size:0.5em">
+						<blockquote class="fragment chat"><img src="img/tester.png" />Attention, certains pays comme l’Italie ont des codes postaux de la forme 75XXX, mais bien sûr il ne faut pas proposer cette option en italie</blockquote>
+						<blockquote class="fragment chat"><img src="img/dev.png" />OK, je pense qu'il faudrait écrire un scénario supplémentaire pour ce cas-ci afin de montrer que l'option n'est disponible qu'en France et que pour les code postaux situés sur Paris</blockquote>
+					</div>
+				</section>
+
+				<section>
+					<h2>Exemple déroulement session</h2>
+					<div style="font-size:0.5em">
+						<blockquote class="fragment chat"><img src="img/ba.png" />Nous voulons offrir la livraison gratuite pour certains produits comme certains livres par exemple</blockquote>
+						<blockquote class="fragment chat"><img src="img/dev.png" />Est-ce que cette livraison gratuite est disponible qu'importe le lieu de livraison ?</blockquote>
+						<blockquote class="fragment chat"><img src="img/ba.png" />En effet il ne faut pas proposer la livraison à domicile en dehors de la France.</blockquote>
+						<blockquote class="fragment chat"><img src="img/tester.png" />Que se passe-t-il si j’achète un livre avec livraison gratuite et un sans livraison gratuite ?</blockquote>
+						<blockquote class="fragment chat"><img src="img/ba.png" />Dans ce cas on bénéficie toujours de la livraison gratuite pour l'ensemble des livres</blockquote>
+					</div>
+				</section>
+
+				<section>
+					<h2>Exemple déroulement session</h2>
+					<div style="font-size:0.5em">
+						<blockquote class="fragment chat"><img src="img/dev.png" />Que se passe-t-il si je commande un livre et un frigo, certainement la livraison ne pas plus être gratuite non ?</blockquote>
+						<blockquote class="fragment chat"><img src="img/ba.png" />Mhmmm nous n'avons pas pensé à ce cas, je dois en discuter et je reviendrais vers vous concernant ce scénario.</blockquote>
+					</div>
+				</section>
+
+				<section>
+					<h2>Deliberate discovery, examples</h2>
+						<pre class="fragment">
+							<code class="gherkin_fr">
+Etant donné que je possède 100€ sur mon compte
+Quand je demande 20€
+Alors 20€ doivent être distribués
+							</code>
+						</pre>
+						<pre class="fragment">
+							<code class="gherkin_fr">
+Etant donné que je possède 100€ sur mon compte
+Quand je demande 20€
+Alors je dois récupérer ma carte
+							</code>
+						</pre>
+						<pre class="fragment">
+							<code class="gherkin_fr">
+Etant donné que je possède 100€ sur mon compte
+Quand je demande 20€
+Alors mon compte doit être débité de 20€
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h2>Avantages de Gherkin</h2>
+					<p>Un exemple concret vaut mieux qu'une explication générale et abstraite</p>
+		<blockquote>Les clients ne doivent pas pouvoir saisir de numéro de carte bleue invalide</blockquote>
+		 <p>Laisse des questions en suspens: 
+		 	Qu'est-ce qu'un numéro de carte invalide ? 
+		 	Comment l'utilisateur doit être notifié ?</p>
+		 <p>Une meilleure version:</p>
+		 <pre>
+		 	<code class="gherkin_fr">
+Scénario: saisie de numéro de carte bleue incorrect
+Etant donné que le client a saisit un numéro de carte bleu avec une longueur inférieure à 16 chiffres
+Quand il valide sa saisie
+Alors un message doit lui indiquer que sa saisie est incorrecte
+		 	</code>
+		 </pre>
+					</p>
+				</section>
+				<section>
+					<h2>Avantages de Gherkin</h2>
+					<p>Simple et souple</p>
+					<p>Gherkin n'impose que les mots clés Given/When/Then</p>
+					<p>Tout le reste peut être écrit en langage naturel !</p>
+				</section>
+				<section>
+					<h2>Avantages de Gherkin</h2>
+					<p>Écriture et lecture à la portée de tous</p>
+					<p>Peuvent être remises en cause</p>
+				</section>
+				<section>
+					<h2>Avantages découlant de l'utilisation de BDD</h2>
+					<p>Implication du métier en leur offrant une meilleure transparence sur l'implémentation des fonctionnalités</p>
+					<p>Ludique et facilite le brainstorming</p>
+					<p>Permet d'améliorer l'esprit d'appropriation de l'équipe face au produit car on va spécifier ensemble</p>
+					<p>Permet de simuler la future utilisation de la fonctionnalité et dans voir les limites</p>
+					<p>Permet de découvrir de nouvelles options avant de s'engager dans une voie</p>
+				</section>
+				<section>
+					<h2>Responsabilisation et appropriation</h2>
+					<img src="img/melee-scrum.jpg"/>
+					<div style="font-size:0.8em">
+						<p>L'équipe entière s'investit dans</p>
+						<p>La qualité du produit</p>
+						<p>L'automatisation des spécifications</p>
+						<p>La création d'une application facile à tester</p>
+						<p>La documentation de l'application</p>
+					</div>
+				</section>
+				<section>
+					<h2>Avantages découlant de l'utilisation de BDD</h2>
+					<blockquote>Working software over comprehensive documentation</blockquote>
+					<p>Une documentation de l'application toujours à jour !</p>
+					<p>Des spécification versionnées grâce au contrôle de source</p>
+				</section>
+				<section>
+					<h2>Avantages découlant de l'utilisation de BDD</h2>
+					<p>Donne un point de départ à TDD + lean code + Feature injection + YAGNI + KISS</p>
+					<p>Création d'un langage omniprésent (DDD, spec, code, test, conversations)</p>
+				</section>
+				<section>
+					<h2>Effets secondaires de BDD</h2>
+					<p>Servent de filet anti-régression</p>
+					<p>Permet de faciliter le refactoring car test boite noire</p>
+					<p>Donne un point de départ à TDD + lean code + Feature injection + YAGNI + KISS</p>
+				</section>
+				<section>
+					<h2>Ruby Cucumber</h2>
+						<img src="img/ruby1.png" />
+						<img src="img/ruby2.png" />
+						<img src="img/ruby3.png" />
+						<img src="img/ruby4.png" />
+						<img src="img/ruby5.png" />
+						<img src="img/ruby6.png" />
+				</section>
+
+				<section>
+					<h2>.NET SpecFlow</h2>
+						<img src="img/specflow1.png" />
+						<img src="img/specflow2.png" />
+				</section>
+
+				<section>
+					<h2>Cucumber JVM<h2/>
+<pre style="font-size:10pt" class="sh_gherkin_en sh_sourceCode"><code><span class="sh_keyword">Feature</span>: Hello World
+<span class="sh_keyword">  Scenario</span>: Say hello
+<span class="sh_keyword">    Given </span>I have a hello app with <span class="sh_string">"Howdy"</span>
+<span class="sh_keyword">    When </span>I ask it to say hi
+<span class="sh_keyword">    Then </span>it should answer with <span class="sh_string">"Howdy World"</span>
+</code></pre>
+<pre style="font-size:10pt" class="sh_java sh_sourceCode"><code>
+
+<span class="sh_keyword">public</span> <span class="sh_keyword">class</span><span class="sh_normal"> </span><span class="sh_classname">HelloStepdefs</span> <span class="sh_cbracket">{</span>
+    <span class="sh_keyword">private</span> <span class="sh_usertype">Hello</span><span class="sh_normal"> </span>hello<span class="sh_symbol">;</span>
+    <span class="sh_keyword">private</span> <span class="sh_usertype">String</span><span class="sh_normal"> </span>hi<span class="sh_symbol">;</span>
+
+    @<span class="sh_function">Given</span><span class="sh_symbol">(</span><span class="sh_string">"^I have a hello app with </span><span class="sh_specialchar">\"</span><span class="sh_string">([^</span><span class="sh_specialchar">\"</span><span class="sh_string">]*)</span><span class="sh_specialchar">\"</span><span class="sh_string">$"</span><span class="sh_symbol">)</span>
+    <span class="sh_keyword">public</span> <span class="sh_type">void</span> <span class="sh_function">I_have_a_hello_app_with</span><span class="sh_symbol">(</span><span class="sh_usertype">String</span><span class="sh_normal"> </span>greeting<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
+        hello <span class="sh_symbol">=</span> <span class="sh_keyword">new</span> <span class="sh_function">Hello</span><span class="sh_symbol">(</span>greeting<span class="sh_symbol">);</span>
+    <span class="sh_cbracket">}</span>
+
+    @<span class="sh_function">When</span><span class="sh_symbol">(</span><span class="sh_string">"^I ask it to say hi$"</span><span class="sh_symbol">)</span>
+    <span class="sh_keyword">public</span> <span class="sh_type">void</span> <span class="sh_function">I_ask_it_to_say_hi</span><span class="sh_symbol">()</span> <span class="sh_cbracket">{</span>
+        hi <span class="sh_symbol">=</span> hello<span class="sh_symbol">.</span><span class="sh_function">sayHi</span><span class="sh_symbol">();</span>
+    <span class="sh_cbracket">}</span>
+
+    @<span class="sh_function">Then</span><span class="sh_symbol">(</span><span class="sh_string">"^it should answer with </span><span class="sh_specialchar">\"</span><span class="sh_string">([^</span><span class="sh_specialchar">\"</span><span class="sh_string">]*)</span><span class="sh_specialchar">\"</span><span class="sh_string">$"</span><span class="sh_symbol">)</span>
+    <span class="sh_keyword">public</span> <span class="sh_type">void</span> <span class="sh_function">it_should_answer_with</span><span class="sh_symbol">(</span><span class="sh_usertype">String</span><span class="sh_normal"> </span>expectedHi<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
+        <span class="sh_function">assertEquals</span><span class="sh_symbol">(</span>expectedHi<span class="sh_symbol">,</span> hi<span class="sh_symbol">);</span>
+    <span class="sh_cbracket">}</span>
+<span class="sh_cbracket">}</span>
+</code></pre>
+				</section>
+				<section>
+					<h2>Améliorer la lisibilité à l'aide des tables</h2>
+					<pre>
+						<code class="gherkin_fr">
+Etant donné le produit 'Baskets' avec un prix de '50' euros et un poids de '300' g
+Et le produit 'Jeans' avec un prix de '60' euros et un poids de '200' g
+Et le produit 'T-shirt' avec un prixd '20 euros' et un poids de '50' g
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Améliorer la lisibilité à l'aide des tables</h2>
+					<pre>
+						<code class="gherkin_fr">
+Etant donné les produits:
+|Nom    |Prix (euros)|Poids (g)|
+|Baskets|50          |300      |
+|Jeans  |60          |200      |
+|T-shirt|20          |50       |
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Patrons de scénarios</h2>
+					<pre style="font-size:0.4em">
+						<code class="gherkin_fr">
+Fonctionnalité: Retrait d&rsquo;un montant fixe
+<i>Le menu de retrait contient plusieurs montants</i>
+<i>fixes afin que le client puisse retirer rapidement</i>
+Scénario:Retrait de 50€
+Etant donné que je possède 500€ sur mon compte
+Quand je retire 50€
+Alors je dois recevoir 50€
+Et mon compte doit posséder un solde de 450€
+
+Scénario:Retrait de 100€
+Etant donné que je possède 500€ sur mon compte
+Quand je retire 100€
+Alors je dois recevoir 100€
+Et mon compte doit posséder un solde de 400€
+
+Scénario:Retrait de 200€
+Etant donné que je possède 500€ sur mon compte
+Quand je retire 200€
+Alors je dois recevoir 200€
+Et mon compte doit posséder un solde de 300€
+						</code>
+					</pre>
+				</section>
+<section>
+					<h2>Patrons de scénarios</h2>
+					<pre>
+						<code class="gherkin_fr">
+Fonctionnalité: Retrait d&rsquo;un montant fixe
+<i>Le menu de retrait contient plusieurs montants</i>
+<i>fixes afin que le client puisse retirer rapidement</i>
+Scénario:Retrait
+Etant donné que je possède '&lt;solde&gt;'€ sur mon compte
+Quand je retire '&lt;retrait&gt;'€
+Alors je dois recevoir '&lt;distribué&gt;'€
+Et mon compte doit posséder un solde de '&lt;restant&gt;'€
+
+Examples:
+|solde|retrait|distribué|restant|
+|500  |50     |50       |450    |
+|500  |100    |100      |400    |
+|500  |200    |200      |300    |
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Scénarios à tables multiples</h2>
+						<pre>
+							<code class="gherkin_fr" style="font-size:0.8em">
+Etant donné que j&rsquo;essaie de créer un compte avec le mot de passe '&lt;Mot de passe&gt;'
+Alors je devrais être notifié que le mot de passe est '&lt;Validité&gt;'
+
+Examples: <i>Trop court</i>
+<i>Les mots de passe inférieurs à 4 caractères sont invalides</i>
+| Mot de passe | Validité |
+| abc 		   | invalide |
+| ab1          | invalide |
+
+Examples: <i>Lettres et chiffres</i>
+<i>Les mots de passe doivent contenir des lettres et des chiffres</i>
+| Mot de passe | Validité |
+| abc1         | valide   |
+| abcd         | invalide |
+| abcd1        | valide   |
+							</code>
+						</pre>
+				</section>
+				<section>
+					<h2>Bonnes pratiques</h2>
+					<p>Éviter les scénarios trop abstraits</p>
+					<pre>
+						<code class="gherkin_fr">
+Scénario: Montant total du panier
+Etant donné un client avec 3 produits dans son panier
+Alors il doit visualiser correctement le montant total
+
+Scénario: Montant total du panier
+Etant donné un client A
+Et possédant un panier avec les produits B et C
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Bonnes pratiques</h2>
+					<p>Éviter les scénarios trop abstraits</p>
+					<pre>
+						<code class="gherkin_fr">
+Scénario: Montant total du panier
+Etant donné un client avec les produits suivants dans son panier
+|Nom du produit  |Prix unitaire(euros)|Quantité|
+|PS3		     |250                 |1       |
+|Prince of persia|50                  |1       |
+Quand il consulte son panier flotant
+Alors il doit visualiser un montant total de 300 euros
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Mauvaises pratiques</h2>
+					<p>Faire apparaître des ID techniques</p>
+					<pre>
+						<code class="gherkin_fr">
+Scénario: Montant total du panier
+Etant donné les produits suivants:
+  |Id|Produit         |Prix unitaire|
+  |1 |PS3             |250          |
+  |2 |Prince of persia|50           |
+Et le client suivant
+  |Id|Nom|
+  |1 |John|
+Et le panier suivant:
+  |Id|ClientId|
+  |1 |1       |
+Et avec les articles suivants:
+  |Id|PanierId|ArticleId|Quantité|
+  |1 |1       |1        |1       |
+  |2 |1       |2        |1       |
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Bonnes pratiques</h2>
+					<p>Lisibilité avant tout (scripts à bannir)<p>
+					<p>Ne pas exprimer les scénarios en terme d'UI</p>
+					<p>Découplé de l'UI afin de faciliter le changement</p>
+					<p>Sont généralement trop verbeux, ennuyants à lire et fragiles</p>
+					<p>Exprimez vos scénarios en terme métier<p>
+				</section>
+				<section>
+					<h2>Bonnes pratiques</h2>
+					<p>Éviter les tests workflow</p>
+					<p>=>Tester en terme d'UI ou de workflow masque l'intention, le lecteur doit refaire le chemin inverse</p>
+					<p>=>Le QUOI pas le COMMENT</p>
+				</section>
+				<section>
+					<h2>Bonnes pratiques</h2>
+					<p>Se concentrer sur ce que doit faire l'application et non pas comment elle le réalise</p>
+					<pre>
+						<code class="gherkin_fr">
+Scénario: Les utilisateurs non connectés doivent être redirigés vers le formulaire de connexion
+Etant donné l&rsquo;utilisateur 'Pierre'
+Et ayant pour adresses email 'pierre@yahoo.com'
+Et ayant le mot de passe 'passw0rd'
+Quand l&rsquo;utilisateur visite la page 'http://localhost:5740/monsite'
+Alors il doit être redirigé vers la page 'https://localhost:5740/monsite/login'
+Quand il saisit le login 'pierre@yahoo.com' dans le champ '#login'
+Et qu&rsquo;il saisit le mot de passe 'passw0rd' dans le champ '#mdp'
+Et qu&rsquo;il valide le formulaire "#formLogin" de connexion
+Alors il doit être redirigé vers la page 'http://localhost:5740/monsite/home'
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Bonnes pratiques</h2>
+					<p>Se concentrer sur ce que doit faire l'application et non pas comment elle le réalise</p>
+					<pre>
+						<code class="gherkin_fr">
+Scénario: Les utilisateurs non connectés doivent être redirigés vers le formulaire de connexion
+Etant donné un utilisateur non connecté
+Quand il essaie d&rsquo;accéder à n&rsquo;importe quelle page du site
+Alors il doit être redirigé vers le formulaire de connexion
+
+Scénario: Utilisateur ayant été redirigé vers le formulaire de connexion
+Etant donné un utilisateur ayant été redirigé vers le formulaire de connexion
+Quand il soumet ses identifiants
+Alors il doit être redirigé vers la page dont il avait essayé d&rsquo;accéder
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Bonnes pratiques</h2>
+					<p>Bien nommer ses scénarios</p>
+					<pre>
+						<code class="gherkin_fr">
+Scénario: 100 euros
+Etant donné que le client possède pour plus de 100 euros de produits
+Quand il consulte son récapitulatif de panier
+Alors il doit visualiser une réduction immédiate de 10% sur le montant total
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Bonnes pratiques</h2>
+					<p>Faire un résumé du scénario</p>
+					<pre>
+						<code class="gherkin_fr">
+Scénario: Accorder une réduction de 10% pour les paniers de plus de 100 euros
+Etant donné que le client possède pour plus de 100 euros de produits
+Quand il consulte son récapitulatif de panier
+Alors il doit visualiser une réduction immédiate de 10% sur le montant total
+						</code>
+					</pre>
+					<p>Permet de retrouver plus rapidement des scénarios d'intérêt</p>
+					<p>Permet par la suite d'aider à l'analyse des scénarios en échec</p>
+				</section>
+				<section>
+					<h2>Tags: Retrouver ses scénarios</h2>
+					<pre>
+						<code class="gherkin_fr">
+@nightly @web @summary @sprint10
+Scénario: Accorder une réduction de 10% pour les paniers de plus de 100 euros
+Etant donné que le client possède pour plus de 100 euros de produits
+Quand il consulte son récapitulatif de panier
+Alors il doit visualiser une réduction immédiate de 10% sur le montant total
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Éviter de tester toutes les combinaisons</h2>
+					<p>Partir du happy path</p>
+					<p>Explorer à partir de là</p>
+					<p>Ces scénarios pourront servir de bases pour une autre spec plus orienté vérification.</p>
+				</section>
+				<section>
+					<h2>Les principes F.I.R.S.T</h2>
+					<p class="fragment">Fast</p>
+					<p class="fragment">Independent</p>
+					<p class="fragment">Repeatable</p>
+					<p class="fragment">Self Validating</p>
+					<p class="fragment">Timely</p>
+				</section>
+				<section>
+					<h2>Bugs</h2>
+					<p>Il n'y pas de bugs!</p>
+					<p>Mais que des scénarios oubliés !</p>
+				</section>
+				<section>
+					<h2>Mauvaises pratiques</h2>
+					<p>Écrire les scénarios en solo</p>
+					<p>Écrire les scénarios avec seulement BA et testeur puis catapultage sur le développeur</p>
+					<p>Les 3 acteurs doivent toujours arriver à une étape de collaboration</p>
+					<p>Afin de développer le langage/compréhension/vision commune</p>
+				</section>
+				<section>
+					<h2>Mauvaises pratiques</h2>
+					<p>Utiliser Specflow pour de simples TU</p>
+					<section><pre><code class="gherkin_en">
+Feature: Stack
+
+When a new stack is created
+Then it is empty
+
+When an element is added to the stack
+Then that element is at the top of the stack
+
+When a stack has N elements 
+And element E is on top of the stack
+Then a pop operation returns E
+And the new size of the stack is N-1
+				</code></pre></section>
+				<section><pre><code>
+describe Hash do
+  before do
+    @hash = Hash.new({:hello => 'world'})
+  end
+ 
+  it "should return a blank instance" do
+    Hash.new.should == {}
+  end
+ 
+  it "hash the correct information in a key" do
+    @hash[:hello].should == 'world'
+  end
+end
+				</code></pre></section>
+				</section>
+
+				<section>
+					<h2>En savoir plus ?</h2>
+					<p>Livres</p>
+					<div>
+						<img src="img/cukebook.jpg" style="width:100px"/>
+						<img src="img/specby.jpg" style="width:100px"/>
+					</div>
+					<div>
+						<p>Blogs</p>
+						<a>lizkeogh.com</a>
+						<a>dannorth.net</a>
+					</div>
+					<div>
+						<p>Wiki</p>
+						<p><a>behaviordrivendevelopment.wikispaces.com</a></p>
+					</div>
+					<div>
+						<p>Attention</p>
+						<a>Pas que du bon sur le net!</a>
+					</div>
+				</section>
+
+				<section>
+					<h2>Architecture technique</h2>
+					Business layer
+Features
+Scenarios
+Steps
+
+TEchnlogy layer
+Step definitions
+Support code
+Automation library
+
+SUT
+				</section>
+
+				<section>
+					<h2>Implémentation technique</h2>
+					<p>Outside In (Permet de YAGNI/KISS)
+		Toute chose provient d'un besoin code->test->feature->business</p>
+		<p>Specflow doit être un client de l'application comme peut l'être un navigateur ou une application desktop.
+Il faut donc créer se layer applicatif qui permet à n'importe quel type de client de parler à l'application via une API.</p>
+<p>Steps définitions doivent être un layer fin</p>
+<p>Steps définitions doivent faire exactement ce que l'on attend d'elles, ni plus, ni moins</p>
+<p>Factoriser les steps</p>
+<p>L'utilisateur entre son login
+	L'utilisateur entre son mdp
+	L'utilisateur valide
+	=> L'utilisateur se connecte au site</p>
+	<p>Travailler en environnement isolé</p>
+	<p>Ne pas indiquer les détails (par exemple mots de passes)</p>
+	<p>- Ports and adapter
+	Use Cases And The Application Boundary
+	It is useful to use the hexagonal architecture pattern to reinforce the preferred way of writing use cases.
+	A common mistake is to write use cases to contain intimate knowledge of the technology sitting outside each port. These use cases have earned a justifiably bad name in the industry for being long, hard-to-read, boring, brittle, and expensive to maintain.
+	Understanding the ports and adapters architecture, we can see that the use cases should generally be written at the application boundary (the inner hexagon), to specify the functions and events supported by the application, regardless of external technology. These use cases are shorter, easier to read, less expensive to maintain, and more stable over time.
+- DCI (Context), CQRS (Command), Port And Adapter (Use case)
+</p>
+<p>Automatiser en mémoire pour vitesse d'éxécution maximale et scalabilité</p>
+<p>Les 2 approches</p>
+<p>End to end (continuous delivery, goose, thoughtwork antology 2 => dans le context de continuous delivery => Favorise la confiance => engendre les mauvaise pratiques</p>
+<p>Mock UI/MockDB Clean code, Hexagonal archi => Favorise le feedback => + de refacto => gestion de risque => force les bonnes pratiques => Refacto qualité interne assuré par les TU et refacto de l'archi assuré par BDD</p>
+				</section>
+
+				<!-- Reveal js -->
+
+				<section>
+					<h1>Reveal.js</h1>
+					<h3>HTML Presentations Made Easy</h3>
+				</section>
+				
+				<section>
+					<h2>Heads Up</h2>
+					<p>
+						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with 
+						support for CSS 3D transforms to see it in its full glory.
+					</p>
+					<p>
+						<i><small>- <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small></i>
+					</p>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you run the speaker notes server.
+					</aside>
+				</section>
+				
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Vertical Slides</h2>
+						<p>
+							Slides can be nested inside of other slides,
+							try pressing <a href="#/2/1">down</a>.
+						</p>
+						<a href="#/2/1" class="image">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section>
+						<h2>Basement Level 1</h2>
+						<p>Press down or up to navigate.</p>
+					</section>
+					<section>
+						<h2>Basement Level 2</h2>
+						<p>Cornify</p>
+						<a class="test" href="http://cornify.com">
+							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
+						</a>
+					</section>
+					<section>
+						<h2>Basement Level 3</h2>
+						<p>That's it, time to go back up.</p>
+						<a href="#/2" class="image">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
+						</a>
+					</section>
+				</section>
+
+				<section>
+					<h2>Holistic Overview</h2>
+					<p>
+						Press <strong>ESC</strong> to enter the slide overview!
+					</p>
+				</section>
+
+				<section>
+					<h2>rvl.io</h2>
+					<p>
+						If you don't like writing slides in HTML you can use the online editor <a href="http://www.rvl.io" target="_blank">rvl.io</a>.
+					</p>
+				</section>
+
+				<section>
+					<h2>Works in Mobile Safari</h2>
+					<p>
+						Try it out! You can swipe through the slides and pinch your way to the overview.
+					</p>
+				</section>
+
+				<section>
+					<h2>Marvelous Unordered List</h2>
+					<ul>
+						<li>No order here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Fantastic Ordered List</h2>
+					<ol>
+						<li>One is smaller than...</li>
+						<li>Two is smaller than...</li>
+						<li>Three!</li>
+					</ol>
+				</section>
+
+
+
+				<section></section>
+
+				<section data-markdown>
+					## Markdown support
+					
+					For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
+
+					<pre><code contenteditable style="margin-top: 20px;">&lt;section data-markdown&gt;
+  ## Markdown support
+
+  For those of you who like that sort of thing. 
+  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
+&lt;/section&gt;
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Transition Styles</h2>
+					<p>
+						You can select from different transitions, like: <br>
+						<a href="http://lab.hakim.se/reveal-js/?transition=cube">Cube</a> -
+						<a href="http://lab.hakim.se/reveal-js/?transition=page">Page</a> -
+						<a href="http://lab.hakim.se/reveal-js/?transition=concave">Concave</a> -
+						<a href="http://lab.hakim.se/reveal-js/?transition=linear">Linear</a>
+					</p>
+				</section>
+
+				<section>
+					<h2>Themes</h2>
+					<p>
+						Reveal.js comes with a few themes built in: <br>
+						<a href="http://lab.hakim.se/reveal-js/?theme=sky">Sky</a> -
+						<a href="http://lab.hakim.se/reveal-js/?theme=beige">Beige</a> -
+						<a href="http://lab.hakim.se/reveal-js/?theme=simple">Simple</a> -
+						<a href="http://lab.hakim.se/reveal-js/">Default</a>
+					</p>
+					<p>
+						<small>
+							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
+						</small>
+					</p>
+				</section>
+
+				<section>
+					<section data-state="alert">
+						<h2>Global State</h2>
+						<p>
+							Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+							will be added as a class to the document element when the slide is open. This lets you
+							apply broader style changes, like switching the background.
+						</p>
+						<a href="#/7/1" class="image">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-state="blackout">
+						<h2>"blackout"</h2>
+						<a href="#/7/2" class="image">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-state="soothe">
+						<h2>"soothe"</h2>
+						<a href="#/7/0" class="image">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
+						</a>
+					</section>
+				</section>
+
+				<section data-state="customevent">
+					<h2>Custom Events</h2>
+					<p>
+						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+					</p>
+					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">Reveal.addEventListener( 'customevent', function() {
+	console.log( '"customevent" has fired' );
+} );
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Clever Quotes</h2>
+					<p>
+						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						The nice thing about standards is that there are so many to choose from</q> and block:
+					</p>
+					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						For years there has been a theory that millions of monkeys typing at random on millions of typewriters would 
+						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
+					</blockquote>
+				</section>
+				
+				<section>
+					<h2>Pretty Code</h2>
+					<pre><code contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+    
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) ) {
+        node.className += ' roll';
+      }
+    };
+  }
+}
+					</code></pre>
+					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+				</section>
+				
+				<section>
+					<h2>Intergalactic Interconnections</h2>
+					<p>
+						You can link between slides internally,
+						<a href="#/2/3">like this</a>.
+					</p>
+				</section>
+
+				<section>
+					<h2>Fragmented Views</h2>
+					<p>Hit the next arrow...</p>
+					<p class="fragment">... to step through ...</p>
+					<ol>
+						<li class="fragment"><code>any type</code></li>
+						<li class="fragment"><em>of view</em></li>
+						<li class="fragment"><strong>fragments</strong></li>
+					</ol>
+				</section>
+				
+				<section>
+					<h2>Spectacular image!</h2>
+					<a class="image" href="http://hakim.se/experiments/html5/breakdom/" target="_blank">
+						<img width="320" height="412" src="https://s3.amazonaws.com/hakim-static/reveal-js/breakdom.png" alt="BreakDOM game screenshot">
+					</a>
+				</section>
+				
+				<section>
+					<h2>Export to PDF</h2>
+					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
+					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
+					<script>
+						document.getElementById('slideshare').attributeName = 'allowfullscreen';
+					</script>
+				</section>
+				
+				<section>
+					<h2>Stellar Links</h2>
+					<ul>
+						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
+						<li><a href="http://hakim.se/projects/reveal-js">Leave feedback on my site</a></li>
+						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>It's free</h2>
+					<p>
+						reveal.js and <a href="http://www.rvl.io">rvl.io</a> are entirely free but if you'd like to support the projects you can donate below. 
+						Donations will go towards hosting and domain costs.
+					</p>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<input type="hidden" name="cmd" value="_donations">
+						<input type="hidden" name="business" value="hakim.elhattab@gmail.com">
+						<input type="hidden" name="lc" value="US">
+						<input type="hidden" name="item_name" value="reveal.js / rvl.io">
+						<input type="hidden" name="no_note" value="0">
+						<input type="hidden" name="currency_code" value="USD">
+						<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					</form>
+				</section>
+				
+				<section>
+					<h1>THE END</h1>
+					<h3>BY Hakim El Hattab / hakim.se</h3>
+				</section>
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+		<script>
+
+		
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				theme: Reveal.getQueryHash().theme || 'default', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() 
+						{ 
+							
+							window.hljs.initHighlightingOnLoad();
+							hljs.LANGUAGES.gherkin_en = function() {
+							  return {
+							    defaultMode: {
+							      contains: [
+							        {
+							          className: 'keyword',
+							          begin: '^\\s*(But |And |Then |When |Given |\\* |Scenarios|Examples|Scenario Template|Scenario Outline|Scenario|Background|Feature)',
+							          relevance: 0
+							        },
+							        {
+							          className: 'string',
+							          begin: '\\|',
+							          relevance: 0
+							        },
+							        hljs.HASH_COMMENT_MODE,
+							        {
+							          className: 'string',
+							          begin: '"""', end: '"""',
+							          relevance: 10
+							        },
+							        hljs.APOS_STRING_MODE, 
+							        hljs.QUOTE_STRING_MODE,
+							        hljs.C_NUMBER_MODE,
+							        {
+							          className: 'annotation', begin: '@[^@\r\n\t ]+'
+							        }
+							      ]
+							    }
+							  };
+							}();
+					hljs.LANGUAGES.gherkin_fr = function() {
+				  
+					  return {
+					    defaultMode: {
+					      contains: [
+					        {
+					          className: 'keyword',
+					          begin: "^\\s*(Mais |Et |Alors |Lorsqu'|Lorsque |Quand |Étant données |Étant donnés |Étant donnée |Étant donné |Etant données |Etant donnés |Etant donnée |Etant donné |Soit |\\* |Exemples|Plan du Scénario|Plan du scénario|Scénario|Contexte|Fonctionnalité)",
+					          relevance: 0
+					        },
+					        {
+					          className: 'string',
+					          begin: '\\|',
+					          relevance: 0
+					        },
+					        hljs.HASH_COMMENT_MODE,
+					        {
+					          className: 'string',
+					          begin: '"""', end: '"""',
+					          relevance: 10
+					        },
+					        hljs.APOS_STRING_MODE, 
+					        hljs.QUOTE_STRING_MODE,
+					        hljs.C_NUMBER_MODE,
+					        {
+					          className: 'annotation', begin: '@[^@\r\n\t ]+'
+					        }
+					      ]
+					    }
+					  };
+					}();
+
+
+
+
+
+
+
+						} 
+					},
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+		</script>
+		<script type="text/javascript">
+						$(function(){
+							var frame = 0;
+							setInterval(function(){
+								frame++;
+								if(frame%30 >= 29 ){
+									$("#troll").attr("src","img/tester_troll.png");
+								}
+								else if(frame%30 < 29 ){
+									$("#troll").attr("src","img/tester.png");
+								}
+							},100);
+						});
+		</script>
+
+	</body>
+</html>
